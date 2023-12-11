@@ -10,6 +10,7 @@ class LinkFinder(HTMLParser):
         self.page_url = page_url
         self.links = set()
 
+    # When HTMLParser feed() is called, it is used for opening tag <a> links
     def handle_starttag(self, tag, attrs):
         if tag == 'a':
             for (attribute, value) in attrs:
